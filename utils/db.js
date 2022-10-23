@@ -1,11 +1,12 @@
-const mysql = require('mysql')
+const mysql = require('mysql');
+const { production } = require('../config');
 
 const connect = mysql.createConnection({
-    host :'database-dandi.c2kfdi3bqt2u.ap-southeast-2.rds.amazonaws.com',
-    port : '3306',
-    user :'dandi',
-    password :'dandi123',
-    database : 'dandi_db'
+    host : production.host,
+    port : production.port,
+    user : production.username,
+    password : production.password,
+    database : production.database
 })
 
 connect.connect((err) => {
@@ -13,7 +14,7 @@ connect.connect((err) => {
         console.log(err)
         return
     }
-    console.log('connect')
+    console.log('Connected to DB')
 })
 
 module.exports = connect
