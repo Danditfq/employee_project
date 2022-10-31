@@ -1,6 +1,6 @@
 var memjs = require('memjs');
 
-var mc = memjs.Client.create('127.0.0.1:11211');
+var mc = memjs.Client.create('memcached-dandi.sonoao.cfg.apse2.cache.amazonaws.com:11211');
 
 var resultArr = []
 
